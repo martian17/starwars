@@ -1,0 +1,16 @@
+body{
+    margin:0px;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+}
+
+.star-wrapper{
+    position:relative;
+}
+
+.star-wrapper>canvas{
+    position:absolute;
+    top:0px;
+    left:0px;
+}
