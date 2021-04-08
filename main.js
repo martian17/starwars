@@ -188,7 +188,7 @@ var StarWarsAnimation = function(width,height,parent){
     this.drawfirstPhase = function(t){
         for(var i = 0; i < startingPoints.length; i++){
             var [w,h,r] = startingPoints[i];
-            var span = r*(Math.E**(t**2.5))/1000+1;//constant acceleration
+            var span = r*(Math.E**(t**2.5)-0.99)/1000+1;//constant acceleration
             if(span > 1000)span = 1000;
             ctx1.beginPath();
             ctx1.moveTo(w2+w,h2+h);
@@ -235,7 +235,10 @@ window.onload = function(){
         var sa = new StarWarsAnimation(window.innerWidth,window.innerHeight,wrapper);
 
         var animate = function(t){
-            sa.drawUnderlay(t/1000);
+            t /= 1000;
+            t -= 2;
+            if(t < 0)t = 0;
+            sa.drawUnderlay(t);
             sa.drawOverlay();
             requestAnimationFrame(animate);
         };

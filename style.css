@@ -14,3 +14,39 @@ body{
     top:0px;
     left:0px;
 }
+
+#msg{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background-color:#0008;
+    color:#fff;
+    /*text-align:center;*/
+    animation:fade 2s cubic-bezier(1,0,.62,1);
+    opacity:0;
+    display:grid;
+    place-items:center;
+    font-size:3em;
+}
+
+@keyframes fade {
+    from {opacity:1;}
+    to   {opacity:0;}
+}
+
+
+#github{
+    color:#fff;
+    text-decoration:none;
+    background-color:#333;
+    position:absolute;
+    right:-3em;
+    top:2.5em;   transform:rotate(45deg);
+    z-index:10;
+    font-size:1.2em;
+    padding:0.2em 2em;
+    border: dashed 2px #fff;
+    box-shadow:0px 0px 10px 3px #000;
+}
